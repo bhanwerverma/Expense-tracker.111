@@ -1,0 +1,60 @@
+{
+  "expense": [
+    {
+      "id": "0b64",
+      "Amount": 100000,
+      "Type": "Credit",
+      "Description": "Salary",
+      "Category": "Income",
+      "DateTime": "2025-05-01T18:57"
+    },
+    {
+      "id": "25ae",
+      "Amount": 4000,
+      "Type": "Debit",
+      "Description": "Bill",
+      "Category": " Bills & Subscriptions",
+      "DateTime": "2025-05-11T18:58"
+    },
+    {
+      "id": "e44b",
+      "Amount": 10000,
+      "Type": "Debit",
+      "Description": "Shopping",
+      "Category": "Entertainment",
+      "DateTime": "2025-05-15T18:59"
+    },
+    {
+      "id": "e509",
+      "Amount": 25000,
+      "Type": "Debit",
+      "Description": "Invested",
+      "Category": " Financial & Investments",
+      "DateTime": "2025-05-20T19:00"
+    },
+    {
+      "id": "700f",
+      "Amount": 40000,
+      "Type": "Debit",
+      "Description": "Car EMI",
+      "Category": " Bills & Subscriptions",
+      "DateTime": "2025-05-20T19:08"
+    },
+    {
+      "id": "a9f6",
+      "Amount": 2000,
+      "Type": "Debit",
+      "Description": "Food and drinks",
+      "Category": "Food & Dinning",
+      "DateTime": "2025-05-22T19:08"
+    },
+    {
+      "id": "1ef0",
+      "Amount": 30000,
+      "Type": "Debit",
+      "Description": "Iphone",
+      "Category": "Entertainment",
+      "DateTime": "2025-05-20T19:37"
+    }
+  ]
+}
