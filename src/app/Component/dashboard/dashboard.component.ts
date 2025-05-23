@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, numberAttribute, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TransactionService } from '../../service/transaction.service';
@@ -8,7 +8,7 @@ import { NgChartsModule } from 'ng2-charts';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [NgIf, ReactiveFormsModule, NgFor, NgChartsModule],
+  imports: [NgIf, ReactiveFormsModule, NgFor, NgChartsModule,NgClass],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })

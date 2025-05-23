@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Dark styling for cards */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+/* Form fields */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+/* Dark button outline style (optional) */
+body.dark-mode .btn-outline {
+  border-color: #aaa;
+  color: #eee;
+}
+

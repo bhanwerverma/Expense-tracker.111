@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <h3 class="mb-4">Settings</h3>
+
+  <!-- Profile Settings -->
+  <div class="card p-4 mb-4 shadow">
+    <h5>Profile Settings</h5>
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input type="text" class="form-control" [(ngModel)]="user.name" placeholder="Enter full name" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Enter email" />
+    </div>
+    <button class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+  </div>
+
+  <!-- Budget Settings -->
+  <div class="card p-4 mb-4 shadow">
+    <h5>Budget Configuration</h5>
+    <div *ngFor="let category of budgets" class="mb-3">
+      <label class="form-label">{{ category.name }}</label>
+      <input type="number" class="form-control" [(ngModel)]="category.amount" placeholder="Enter budget amount" />
+    </div>
+    <button class="btn btn-success" (click)="updateBudgets()">Save Budgets</button>
+  </div>
+
+  <!-- Currency & Theme Settings -->
+  <div class="card p-4 mb-4 shadow">
+    <h5>Preferences</h5>
+    <div class="mb-3">
+      <label class="form-label">Preferred Currency</label>
+      <select class="form-select" [(ngModel)]="settings.currency">
+        <option value="INR">₹ INR</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+      </select>
+    </div>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="darkModeSwitch" [(ngModel)]="settings.darkMode" (change)="applyTheme()">
+      <label class="form-check-label" for="darkModeSwitch">Enable Dark Mode</label>
+    </div>
+  </div>
+
+  <!-- Account Management -->
+  <div class="card p-4 mb-4 shadow">
+    <h5>Account Management</h5>
+    <button class="btn btn-danger" (click)="deleteAccount()">Delete Account</button>
+    <button class="btn btn-secondary ms-3" (click)="logout()">Logout</button>
+  </div>
+</div>

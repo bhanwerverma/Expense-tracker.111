@@ -1,0 +1,89 @@
+<div class="container mt-4 border border-2 shadow p-4 text-center">
+  <h2 class="mb-4">Budgets with Remaining Amount</h2>
+  <hr />
+
+  <!-- Input Row -->
+  <div class="row g-2 mb-3 mt-3 border border-2 p-4 shadow">
+    <div class="col-md-4">
+      <select
+        class="form-select"
+        [(ngModel)]="newbudgets.Category"
+        required
+      >
+        <option value="" disabled selected>Select the Transaction Type</option>
+        <option value="Income">Income</option>
+        <option value="House Hold">House Hold</option>
+        <option value="Food & Dinning">Food & Dinning</option>
+        <option value="Transportation">Transportation</option>
+        <option value="Health & Insurance">Health & Insurance</option>
+        <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Travel">Travel</option>
+        <option value="Bills & Subscriptions">Bills & Subscriptions</option>
+        <option value="Financial & Investments">Financial & Investments</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <input
+        class="form-control"
+        type="number"
+        [(ngModel)]="newbudgets.amount"
+        placeholder="Amount"
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <button
+        class="btn btn-primary w-100"
+        (click)="addBudget()"
+        [disabled]="!newbudgets.Category || !newbudgets.amount"
+      >
+        Add Budget
+      </button>
+    </div>
+  </div>
+
+  <!-- Budget Table -->
+  <div
+    class="border border-2 shadow p-4 mt-3"
+    style="overflow-y: auto; max-height: 50vh"
+  >
+    <table class="table table-bordered table-hover align-middle text-center">
+      <thead class="table-light">
+        <tr>
+          <th>S.No</th>
+          <th>Category</th>
+          <th>Budget</th>
+          <th>Remaining</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let budget of budgets; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ budget.Category }}</td>
+          <td>₹{{ budget.amount }}</td>
+          <td>
+            <span
+              [ngClass]="
+                remainingByCategory[budget.Category || ''] >= 0
+                  ? 'text-success'
+                  : 'text-danger'
+              "
+            >
+              ₹{{ remainingByCategory[budget.Category || ''] }}
+            </span>
+          </td>
+          <td>
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="delete(budget.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

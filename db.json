@@ -1,60 +1,121 @@
 {
+  "settings": [
+    {
+      "id": 1,
+      "currency": "INR",
+      "notification": true,
+      "theme": "light"
+    }
+  ],
+  "Budget": [
+    {
+      "id": "a9fe",
+      "Category": "House Hold",
+      "amount": 24000
+    },
+    {
+      "id": "b46d",
+      "Category": "Food & Dinning",
+      "amount": 10000
+    },
+    {
+      "id": "55f8",
+      "Category": " Financial & Investments",
+      "amount": 20000
+    },
+    {
+      "id": "60ae",
+      "Category": "Entertainment",
+      "amount": 5000
+    },
+    {
+      "id": "7dc5",
+      "Category": "Transportation",
+      "amount": 5000
+    },
+    {
+      "id": "ed5b",
+      "Category": "Travel",
+      "amount": 8000
+    },
+    {
+      "id": "80f7",
+      "Category": "Education",
+      "amount": 10000
+    }
+  ],
   "expense": [
     {
-      "id": "0b64",
-      "Amount": 100000,
+      "id": "56a6",
+      "Amount": 150000,
       "Type": "Credit",
-      "Description": "Salary",
+      "Description": "salary",
       "Category": "Income",
-      "DateTime": "2025-05-01T18:57"
+      "DateTime": "2025-05-01T13:37"
     },
     {
-      "id": "25ae",
-      "Amount": 4000,
-      "Type": "Debit",
-      "Description": "Bill",
-      "Category": " Bills & Subscriptions",
-      "DateTime": "2025-05-11T18:58"
-    },
-    {
-      "id": "e44b",
+      "id": "9593",
       "Amount": 10000,
       "Type": "Debit",
-      "Description": "Shopping",
-      "Category": "Entertainment",
-      "DateTime": "2025-05-15T18:59"
+      "Description": "house rent",
+      "Category": "House Hold",
+      "DateTime": "2025-05-01T13:37"
     },
     {
-      "id": "e509",
-      "Amount": 25000,
+      "id": "95a7",
+      "Amount": 5000,
       "Type": "Debit",
-      "Description": "Invested",
-      "Category": " Financial & Investments",
-      "DateTime": "2025-05-20T19:00"
+      "Description": "Rations",
+      "Category": "House Hold",
+      "DateTime": "2025-05-02T13:38"
     },
     {
-      "id": "700f",
-      "Amount": 40000,
-      "Type": "Debit",
-      "Description": "Car EMI",
-      "Category": " Bills & Subscriptions",
-      "DateTime": "2025-05-20T19:08"
-    },
-    {
-      "id": "a9f6",
+      "id": "c960",
       "Amount": 2000,
       "Type": "Debit",
-      "Description": "Food and drinks",
-      "Category": "Food & Dinning",
-      "DateTime": "2025-05-22T19:08"
+      "Description": "Petrol",
+      "Category": "Transportation",
+      "DateTime": "2025-05-09T13:38"
     },
     {
-      "id": "1ef0",
-      "Amount": 30000,
+      "id": "1af4",
+      "Amount": 5000,
       "Type": "Debit",
-      "Description": "Iphone",
+      "Description": "Movie",
+      "Category": "Food & Dinning",
+      "DateTime": "2025-05-13T13:38"
+    },
+    {
+      "id": "c5e6",
+      "Amount": 25000,
+      "Type": "Debit",
+      "Description": "Investment",
+      "Category": " Financial & Investments",
+      "DateTime": "2025-05-13T13:39"
+    },
+    {
+      "id": "28ed",
+      "Amount": 4000,
+      "Type": "Debit",
+      "Description": "bills",
+      "Category": " Bills & Subscriptions",
+      "DateTime": "2025-05-18T13:39"
+    },
+    {
+      "id": "43a3",
+      "Amount": 4000,
+      "Type": "Debit",
+      "Description": "entertainment",
       "Category": "Entertainment",
-      "DateTime": "2025-05-20T19:37"
+      "DateTime": "2025-05-17T13:40"
+    },
+    {
+      "id": "0bb4",
+      "Amount": 5000,
+      "Type": "Debit",
+      "Description": "sd",
+      "Category": "House Hold",
+      "DateTime": "2025-05-22T13:49"
     }
   ]
 }

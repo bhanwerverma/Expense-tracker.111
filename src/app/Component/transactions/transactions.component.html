@@ -1,52 +1,48 @@
-<div class="container-fluid p-5">
-  <div
-    class="col mt-5 d-flex flex-column justify-content-center text-center shadow p-4 gap-2 border border-2 "
-  >
-    <div class="row mt-3">
-      <h3>Transaction History</h3>
+<div class="container-fluid p-5" style="height: 100vh">
+  <div class="col mt-4 text-center shadow p-4 border border-2">
+    <div class="mb-4">
+      <h3><i class="bi bi-clock-history"></i> &nbsp;Transaction History</h3>
     </div>
     <hr />
-    <div class="row mt-1 ps-1 pe-1 border border-2 p-3 ">
-      <table>
-        <tr >
-          <th>S.No</th>
-          <th>Type</th>
-          <th>Category</th>
-          <th>Amount</th>
-          <th>Date & Time</th>
-          <th>Discription</th>
-          <th>Action Button</th>
-        </tr>
 
-        <tr *ngFor="let list of TransactionHistory,let i = index" >
-          <td>{{i+1}}</td>
-          <td>
-            <div  *ngIf="list.Type == 'Debit'" style="color: red; font-size: 20px; font-weight: 400">
-              <i
-                class="bi bi-arrow-up "
-                
-              ></i
-              >&nbsp;{{ list.Type }}
-            </div>
-            <div *ngIf="list.Type == 'Credit'"  style="color: green; font-size: 20px; font-weight: 400">
-              <i
-                class="bi bi-arrow-down"
-               
-              ></i
-              >&nbsp;{{ list.Type }}
-            </div>
-          </td>
-
-          <td>{{ list.Category }}</td>
-          <td>{{ list.Amount }}</td>
-          <td>{{ list.DateTime }}</td>
-          <td>{{ list.Description }}</td>
-          <td>
-            <button class="btn btn-danger" (click)="Delete(list.id)">
-              Delete
-            </button>
-          </td>
-        </tr>
+    <div
+      class="mt-1 ps-1 pe-1 border border-2 p-3 shadow"
+      style="height: auto; overflow-y: auto; max-height: 65vh;"
+    >
+      <table class="table table-bordered table-hover align-middle text-center">
+        <thead class="table-light">
+          <tr>
+            <th>S.No</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date & Time</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let list of TransactionHistory; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>
+              <span *ngIf="list.Type == 'Debit'" class="text-danger fw-semibold">
+                <i class="bi bi-arrow-up"></i>&nbsp;{{ list.Type }}
+              </span>
+              <span *ngIf="list.Type == 'Credit'" class="text-success fw-semibold">
+                <i class="bi bi-arrow-down"></i>&nbsp;{{ list.Type }}
+              </span>
+            </td>
+            <td>{{ list.Category }}</td>
+            <td>₹{{ list.Amount }}</td>
+            <td>{{ list.DateTime }}</td>
+            <td>{{ list.Description }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="Delete(list.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
