@@ -1,7 +1,7 @@
 {
   "settings": [
     {
-      "id": 1,
+      "id": "1",
       "currency": "INR",
       "notification": true,
       "theme": "light"
@@ -70,36 +70,12 @@
       "DateTime": "2025-05-02T13:38"
     },
     {
-      "id": "c960",
-      "Amount": 2000,
-      "Type": "Debit",
-      "Description": "Petrol",
-      "Category": "Transportation",
-      "DateTime": "2025-05-09T13:38"
-    },
-    {
-      "id": "1af4",
-      "Amount": 5000,
-      "Type": "Debit",
-      "Description": "Movie",
-      "Category": "Food & Dinning",
-      "DateTime": "2025-05-13T13:38"
-    },
-    {
       "id": "c5e6",
       "Amount": 25000,
       "Type": "Debit",
       "Description": "Investment",
       "Category": " Financial & Investments",
       "DateTime": "2025-05-13T13:39"
-    },
-    {
-      "id": "28ed",
-      "Amount": 4000,
-      "Type": "Debit",
-      "Description": "bills",
-      "Category": " Bills & Subscriptions",
-      "DateTime": "2025-05-18T13:39"
     },
     {
       "id": "43a3",
@@ -116,6 +92,118 @@
       "Description": "sd",
       "Category": "House Hold",
       "DateTime": "2025-05-22T13:49"
+    },
+    {
+      "id": "19d6",
+      "Amount": 9000,
+      "Type": "Debit",
+      "Description": "maid",
+      "Category": "House Hold",
+      "DateTime": "2025-05-22T17:26"
+    },
+    {
+      "id": "0e04",
+      "Amount": 4000,
+      "Type": "Debit",
+      "Description": "driver salary",
+      "Category": "House Hold",
+      "DateTime": "2025-05-23T17:28"
+    },
+    {
+      "id": "72bd",
+      "Amount": 7000,
+      "Type": "Debit",
+      "Description": "Mislenious",
+      "Category": "Food & Dinning",
+      "DateTime": "2025-05-23T17:30"
+    },
+    {
+      "id": "c2fa",
+      "Amount": 70000,
+      "Type": "Credit",
+      "Description": "Profit",
+      "Category": "Income",
+      "DateTime": "2025-05-23T17:38"
+    },
+    {
+      "id": "9ea3",
+      "Amount": 2000,
+      "Type": "Debit",
+      "Description": "flower",
+      "Category": "Education",
+      "DateTime": "2025-05-09T17:55"
+    },
+    {
+      "id": "ee0e",
+      "Amount": 1000,
+      "Type": "Debit",
+      "Description": "petrol",
+      "Category": "Transportation",
+      "DateTime": "2025-05-16T17:56"
+    },
+    {
+      "id": "6388",
+      "Amount": 500,
+      "Type": "Debit",
+      "Description": "movie ticket",
+      "Category": "Education",
+      "DateTime": "2025-05-07T17:56"
+    },
+    {
+      "id": "adb9",
+      "Amount": 400,
+      "Type": "Debit",
+      "Description": "miscleanous",
+      "Category": "Education",
+      "DateTime": "2025-05-08T17:57"
+    },
+    {
+      "id": "8a2b",
+      "Amount": 5000,
+      "Type": "Credit",
+      "Description": "profit",
+      "Category": "Income",
+      "DateTime": "2025-05-09T18:01"
+    },
+    {
+      "id": "81db",
+      "Amount": 100000,
+      "Type": "Credit",
+      "Description": "profit",
+      "Category": "Income",
+      "DateTime": "2025-05-22T18:01"
+    },
+    {
+      "id": "e279",
+      "Amount": 10000,
+      "Type": "Credit",
+      "Description": "Profit from grow",
+      "Category": "Income",
+      "DateTime": "2025-05-21T18:02"
+    },
+    {
+      "id": "765c",
+      "Amount": 100000,
+      "Type": "Debit",
+      "Description": "Send a payment",
+      "Category": "Education",
+      "DateTime": "2025-05-23T18:03"
+    },
+    {
+      "id": "7375",
+      "Amount": 7000,
+      "Type": "Debit",
+      "Description": "bill",
+      "Category": "Food & Dinning",
+      "DateTime": "2025-05-22T18:10"
+    },
+    {
+      "id": "7d0a",
+      "Amount": 25000,
+      "Type": "Debit",
+      "Description": "car emi",
+      "Category": " Bills & Subscriptions",
+      "DateTime": "2025-05-23T18:11"
     }
   ]
 }

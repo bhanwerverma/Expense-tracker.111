@@ -86,10 +86,46 @@
           </canvas>
         </div>
       </div>
+      <div class="row mt-3 me-3 d-flex gap-5" style="height: 20%">
+        <div class="col border border-2 d-flex">
+          <div class="col d-flex">
+            <h5 class="mt-3 ms-3" style="color: rgb(104, 103, 103)">
+              Balance:
+            </h5>
+          </div>
+          <div class="col d-flex text-center mt-5">
+            <h2 style="color: green; font-size: 65px">{{ totalBalance }}</h2>
+          </div>
+          <div class="col">
+            <img
+              src="https://img.freepik.com/premium-vector/account-balance-concept-line-icon-simple-element-illustration-account-balance-concept-outline-symbol-design-can-be-used-web-mobile-ui-ux_159242-2000.jpg"
+              alt=""
+              style="width: 150px; height: 150px"
+            />
+          </div>
+        </div>
+        <div class="col border border-2 d-flex">
+          <div class="col d-flex">
+            <h5 class="mt-3 ms-3" style="color: rgb(104, 103, 103)">
+              Debit Balance:
+            </h5>
+          </div>
+          <div class="col d-flex text-center mt-5">
+            <h2 style="color: red; font-size: 65px">{{ TotalDebitBalance }}</h2>
+          </div>
+          <div class="col">
+            <img
+              src="https://img.freepik.com/premium-vector/account-balance-concept-line-icon-simple-element-illustration-account-balance-concept-outline-symbol-design-can-be-used-web-mobile-ui-ux_159242-2000.jpg"
+              alt=""
+              style="width: 150px; height: 150px"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div
-      class="col border shadow mb-4 mt-4 border-2 text-center py-3"
-      style="height: 90vh"
+      class="col border shadow mb-4 mt-4 border-2 text-center py-3 d-flex flex-column justify-content-between"
+      style="height: 100vh"
     >
       <div class="head" style="height: 4%">
         <h5 class="mt-3" style="color: rgb(78, 78, 78)">
@@ -97,7 +133,10 @@
         </h5>
       </div>
       <hr />
-      <table class="table table-borderless align-middle" style="height: 66vh; max-height: 66vh; overflow-y: scroll;">
+      <table
+        class="table table-borderless align-middle d-flex justify-content-around"
+        style="height: 100%;  overflow-y: scroll"
+      >
         <tbody>
           <tr *ngFor="let item of Expense; let i = index">
             <td>{{ i + 1 }}</td>
@@ -119,6 +158,7 @@
             </td>
             <td>{{ item.Type }}</td>
             <td
+              class="d-flex text-center"
               [ngClass]="{
                 'text-danger': item.Type === 'Debit',
                 'text-success': item.Type === 'Credit'
@@ -132,7 +172,7 @@
       </table>
 
       <hr />
-      <div class="button pt-3" style="height: 8%">
+      <div class="button " >
         <h6 style="color: rgb(59, 59, 59)">
           <i class="bi bi-wallet2"></i> &nbsp;Missing Transaction ?&nbsp; &nbsp;
           <button type="button" class="btn btn-primary" (click)="Open()">

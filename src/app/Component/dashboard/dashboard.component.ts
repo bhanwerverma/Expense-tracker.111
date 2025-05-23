@@ -42,10 +42,11 @@ export class DashboardComponent implements OnInit {
     };
     this.Tracsactionservice.AddTransaction(addTransaction).subscribe((res) => {
       console.log(res);
+      this.LoadTransaction();
+      this.User.reset();
+      this.Close();
     });
-    this.LoadTransaction();
-    this.User.reset();
-    this.Close();
+    
   }
   Expense: Transaction[] = [];
   FoodDrinksAmount: number = 0;
@@ -61,6 +62,9 @@ export class DashboardComponent implements OnInit {
       this.TotalAmountBill();
       this.TotalAmountEntertainment();
       this.graph();
+      this.getTotalBalance();
+      this.getTotalDebit();
+      
     });
   }
   TotalAmountOfFoodAndDrinks() {
@@ -101,5 +105,23 @@ export class DashboardComponent implements OnInit {
     });
     this.pieChartLabels = Object.keys(categoryMap);
     this.pieChartData = Object.values(categoryMap);
+  }
+
+  totalBalance: number = 0
+  getTotalBalance(): number {
+  let totalCredit = this.Expense
+    .filter(t => t.Type.trim().toLowerCase() === 'credit')
+    .reduce((sum, t) => sum + Number(t.Amount), 0);
+
+  let totalDebit = this.Expense
+    .filter(t => t.Type.trim().toLowerCase() === 'debit')
+    .reduce((sum, t) => sum + Number(t.Amount), 0);
+
+  return this.totalBalance= totalCredit - totalDebit;
+}
+  TotalDebitBalance:number = 0
+
+  getTotalDebit(){
+    this.TotalDebitBalance = this.Expense.filter(t=> t.Type.trim().toLowerCase() ==='debit').reduce((sum,t)=> sum + Number(t.Amount),0)
   }
 }
