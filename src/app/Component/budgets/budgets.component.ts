@@ -4,9 +4,9 @@ import { Budgets } from '../budgets.model';
 import { Transaction } from '../Transaction.model';
 import { HttpClient } from '@angular/common/http';
 
-import { NgClass, NgFor, NgIf } from '@angular/common';
-import { FormsModule, NgModel } from '@angular/forms';
-import { windowWhen } from 'rxjs';
+import { NgClass, NgFor } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-budgets',
@@ -58,7 +58,6 @@ export class BudgetsComponent implements OnInit {
       this.newbudgets = { Category: '', amount: '' };
       this.loadBudgets();
     });
-    console.log(typeof this.newbudgets.id);
     
   }
 delete(id:any){

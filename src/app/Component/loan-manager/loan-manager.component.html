@@ -1,0 +1,224 @@
+<div class="container-fluid p-4">
+  <div class="container border border-2 shadow d-flex flex-column gap- p-3 rounded-2">
+    <div class="table mt-5">
+      <header class="d-flex justify-content-between">
+        <h4 class="text-center mb-3">Loan Manager</h4>
+        <button class="btn btn-primary" (click)="showNewModal()">
+          Add loan Details
+        </button>
+      </header>
+      <table class="table table-bordered mt-3 text-center">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Loan Type</th>
+            <th scope="col">Lender</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Remaining Balance</th>
+            <th scope="col">Remaining EMI</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action Button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Loan of UserLoanDetails; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ Loan.loanType }}</td>
+            <td>{{ Loan.lender }}</td>
+            <td class="bi bi-currency-rupee">{{ Loan.amount }}</td>
+            <td class="bi bi-currency-rupee">{{ Loan.remainingBalance }}</td>
+            <td>{{ Loan.remainingEmi }}</td>
+            <td
+              [ngStyle]="{
+                color: Loan.status === 'Closed' ? 'red' : 'green',
+                'font-weight': 'bold'
+              }"
+            >
+              {{ Loan.status }}
+            </td>
+            <td>
+              <div class="button d-flex gap-2 justify-content-center">
+                <button class="btn btn-danger" (click)="delete(Loan.id)">
+                  Delete
+                </button>
+                <button class="btn btn-success" (click)="update(Loan)">
+                  Update
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <span
+      *ngIf="showModal"
+      class="border border-2 shadow rounded-4"
+      style="
+        position: absolute;
+        width: 40%;
+        height: auto;
+        padding: 10px;
+        top: 10%;
+        left: 30%;
+        background-color: white;
+        border-radius: 15px;
+      "
+    >
+      <div class="LoanDetail p-4 d-flex flex-column gap-4">
+        <div class="head d-flex justify-content-between">
+          <h3>Add Loan Details</h3>
+          <button class="btn btn-close" (click)="close()"></button>
+        </div>
+        <hr />
+        <div class="body">
+          <form [formGroup]="UserLoan">
+            <!-- Loan Type -->
+            <select class="form-select mb-3" formControlName="loanType">
+              <option value="" disabled >Select Loan Type</option>
+              <option *ngFor="let loan of loanTypes" [value]="loan">
+                {{ loan }}
+              </option>
+            </select>
+
+            <!-- Lender -->
+            <select class="form-select mb-3" formControlName="lender">
+              <option value="" disabled >Select Lender</option>
+              <option *ngFor="let lender of moneyLenders" [value]="lender">
+                {{ lender }}
+              </option>
+            </select>
+
+            <div class="row">
+              <!-- Loan Amount -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="amount"
+                  placeholder="Loan Amount"
+                  formControlName="amount"
+                />
+                <label for="amount"> &nbsp; Loan Amount:</label>
+              </div>
+
+              <!-- Interest Rate -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="interestRate"
+                  placeholder="Interest Rate"
+                  formControlName="interestRate"
+                />
+                <label for="interestRate"> &nbsp; Interest Rate:</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- Tenure -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="tenureMonths"
+                  placeholder="Tenure"
+                  formControlName="tenureMonths"
+                  [min]="0"
+                />
+                <label for="tenureMonths"> &nbsp; Tenure (Months):</label>
+              </div>
+
+              <!-- EMI -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="emi"
+                  placeholder="Monthly EMI"
+                  [value]="MonthlyEMI"
+                />
+                <label for="emi"> &nbsp; Monthly EMI:</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- No of EMI Paid -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="noOfEmiPaid"
+                  placeholder="EMIs Paid"
+                  formControlName="noOfEmiPaid"
+                  [max]="UserLoan.get('tenureMonths')?.value||0"
+                  [min]="0"
+                />
+                <label for="noOfEmiPaid"> &nbsp; No of EMI Paid:</label>
+              </div>
+
+              <!-- Remaining EMI -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="remainingEmi"
+                  placeholder="Remaining EMI"
+                  [value]="remainingEmi || null"
+                />
+                <label for="remainingEmi"> &nbsp; Remaining EMI:</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- Start Date -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="date"
+                  class="form-control"
+                  id="startDate"
+                  placeholder="Start Date"
+                  formControlName="startDate"
+                />
+                <label for="startDate"> &nbsp; Starting Date:</label>
+              </div>
+
+              <!-- Total Balance -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="totalBalance"
+                  placeholder="Total Balance"
+                  [value]="totalBalance"
+                />
+                <label for="totalBalance"> &nbsp; Total Balance:</label>
+              </div>
+
+              <!-- Remaining Balance -->
+              <div class="form-floating mb-3 col">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="remainingBalance"
+                  placeholder="Remaining Balance"
+                  [value]="remainingBalance"
+                />
+                <label for="remainingBalance"> &nbsp; Remaining Balance:</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr />
+        <div class="footer">
+          <div class="button d-flex gap-2 justify-content-end">
+            <button class="btn btn-warning" (click)="close()">Cancel</button>
+            <button class="btn btn-primary" type="submit" (click)="onSubmit()">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>

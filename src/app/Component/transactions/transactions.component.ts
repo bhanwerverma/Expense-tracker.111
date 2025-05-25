@@ -10,7 +10,7 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class TransactionsComponent implements OnInit {
   TransactionHistory: any[] = [];
-  show:boolean = false
+  
 
   constructor(private transactionservice: TransactionService) {}
   ngOnInit(): void {

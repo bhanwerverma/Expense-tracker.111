@@ -7,92 +7,8 @@
       "theme": "light"
     }
   ],
-  "Budget": [
-    {
-      "id": "a9fe",
-      "Category": "House Hold",
-      "amount": 24000
-    },
-    {
-      "id": "b46d",
-      "Category": "Food & Dinning",
-      "amount": 10000
-    },
-    {
-      "id": "55f8",
-      "Category": " Financial & Investments",
-      "amount": 20000
-    },
-    {
-      "id": "60ae",
-      "Category": "Entertainment",
-      "amount": 5000
-    },
-    {
-      "id": "7dc5",
-      "Category": "Transportation",
-      "amount": 5000
-    },
-    {
-      "id": "ed5b",
-      "Category": "Travel",
-      "amount": 8000
-    },
-    {
-      "id": "80f7",
-      "Category": "Education",
-      "amount": 10000
-    }
-  ],
+  "Budget": [],
   "expense": [
-    {
-      "id": "56a6",
-      "Amount": 150000,
-      "Type": "Credit",
-      "Description": "salary",
-      "Category": "Income",
-      "DateTime": "2025-05-01T13:37"
-    },
-    {
-      "id": "9593",
-      "Amount": 10000,
-      "Type": "Debit",
-      "Description": "house rent",
-      "Category": "House Hold",
-      "DateTime": "2025-05-01T13:37"
-    },
-    {
-      "id": "95a7",
-      "Amount": 5000,
-      "Type": "Debit",
-      "Description": "Rations",
-      "Category": "House Hold",
-      "DateTime": "2025-05-02T13:38"
-    },
-    {
-      "id": "c5e6",
-      "Amount": 25000,
-      "Type": "Debit",
-      "Description": "Investment",
-      "Category": " Financial & Investments",
-      "DateTime": "2025-05-13T13:39"
-    },
-    {
-      "id": "43a3",
-      "Amount": 4000,
-      "Type": "Debit",
-      "Description": "entertainment",
-      "Category": "Entertainment",
-      "DateTime": "2025-05-17T13:40"
-    },
-    {
-      "id": "0bb4",
-      "Amount": 5000,
-      "Type": "Debit",
-      "Description": "sd",
-      "Category": "House Hold",
-      "DateTime": "2025-05-22T13:49"
-    },
     {
       "id": "19d6",
       "Amount": 9000,
@@ -140,14 +56,6 @@
       "Description": "petrol",
       "Category": "Transportation",
       "DateTime": "2025-05-16T17:56"
-    },
-    {
-      "id": "6388",
-      "Amount": 500,
-      "Type": "Debit",
-      "Description": "movie ticket",
-      "Category": "Education",
-      "DateTime": "2025-05-07T17:56"
     },
     {
       "id": "adb9",
@@ -205,5 +113,7 @@
       "Category": " Bills & Subscriptions",
       "DateTime": "2025-05-23T18:11"
     }
-  ]
+  ],
+  "loan": [],
+  "repayments": []
 }
